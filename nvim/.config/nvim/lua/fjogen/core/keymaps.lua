@@ -69,7 +69,13 @@ wk.add({
 	{ "<leader>tx", "<cmd>tabclose<CR>", desc = "Close current tab" },
 })
 
--- Git management
+-- Git management/Fuzzy finding
+keymap.set("n", "gR", function()
+	require("fzf-lua").lsp_references()
+end, { desc = "Show LSP references" }) -- show definition, references
+
+keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" }) -- go to declaration
+
 wk.add({
 	{ "<leader>g", group = "Git management" },
 	{ "<leader>gn", ":Neogit<CR>", desc = "Open NeoGit integration" },
@@ -81,6 +87,27 @@ wk.add({
 		desc = "Open git blame (buffer)",
 	},
 	{
+		"<leader>gc",
+		function()
+			require("fzf-lua").git_bcommits()
+		end,
+		desc = "Open git commit log (buffer)",
+	},
+	{
+		"<leader>gd",
+		function()
+			require("fzf-lua").lsp_definitions()
+		end,
+		desc = "See LSP definitions",
+	},
+	{
+		"<leader>gi",
+		function()
+			require("fzf-lua").lsp_implementations()
+		end,
+		desc = "See LSP implementations",
+	},
+	{
 		"<leader>gl",
 		function()
 			require("fzf-lua").git_commits()
@@ -88,11 +115,18 @@ wk.add({
 		desc = "Open git commit log (project)",
 	},
 	{
-		"<leader>gc",
+		"<leader>gR",
 		function()
-			require("fzf-lua").git_bcommits()
+			require("fzf-lua").lsp_references()
 		end,
-		desc = "Open git commit log (buffer)",
+		desc = "See LSP references",
+	},
+	{
+		"<leader>gt",
+		function()
+			require("fzf-lua").lsp_typedefs()
+		end,
+		desc = "See LSP type defintions",
 	},
 })
 
@@ -215,11 +249,6 @@ wk.add({
 keymap.set("n", "¹", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 keymap.set("n", "<a-1>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
 
--- smart open
--- keymap.set("n", "<C-n>", function()
--- 	require("telescope").extensions.smart_open.smart_open()
--- end, { noremap = true, silent = true })
-
 -- fzf-lua
 keymap.set("n", "<C-n>", "<cmd>FzfLua files<cr>", { desc = "Find files" })
 
@@ -252,25 +281,16 @@ keymap.set("n", "<leader>z", function()
 	})
 end, { desc = "Toggle zenmode" }) --  move current buffer to new tab
 
--- telescope
--- wk.add({
--- 	{ "<leader>f", group = "Telescope find files/symbols/strings" },
--- 	{ "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Find string under cursor in cwd" },
--- 	{ "<leader>ff", "<cmd>Telescope find_files hidden=true <cr>", desc = "Fuzzy find files in cwd" },
--- 	{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Fuzzy find recent files" },
--- 	{ "<leader>fs", "<cmd>Telescope live_grep<cr>", desc = "Find string in cwd" },
--- })
-
 -- <F36> = CTRL+F12
-keymap.set("n", "<F36>", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find symbols in document" })
-keymap.set("n", "<C-F12>", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find symbols in document" })
+keymap.set("n", "<F36>", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Find symbols in document" })
+keymap.set("n", "<C-F12>", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Find symbols in document" })
 
 -- <F47> = CTRL+Shift+F12
-keymap.set("n", "<F48>", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Find symbols in workspace" })
-keymap.set("n", "<C-S-F12", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Find symbols in workspace" })
+keymap.set("n", "<F48>", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "Find symbols in workspace" })
+keymap.set("n", "<C-S-F12", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "Find symbols in workspace" })
 
 -- Diagnostics
-keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Show buffer diagnostics" }) -- show  diagnostics for file
+keymap.set("n", "<leader>D", "<cmd>FzfLua diagnostics_document<CR>", { desc = "Show buffer diagnostics" }) -- show  diagnostics for file
 
 --- Refactor
 wk.add({
@@ -282,12 +302,6 @@ wk.add({
 	{ "<leader>rn", ":Refactor inline_var", desc = "Inline variable to value" },
 	{ "<leader>rv", ":Refactor extract_var", desc = "Extract value to variable" },
 })
-
--- substitute
-vim.keymap.set("n", "s", require("substitute").operator, { noremap = true })
-vim.keymap.set("n", "ss", require("substitute").line, { noremap = true })
-vim.keymap.set("n", "S", require("substitute").eol, { noremap = true })
-vim.keymap.set("x", "s", require("substitute").visual, { noremap = true })
 
 wk.add({
 	{ "<leader>hh", ":lua vim.diagnostic.open_float()<cr>", desc = "Show diagnostic under line in floating window" },

@@ -11,4 +11,7 @@ stow nvim
 ## Currently stowed
 
 - neovim config
+  - requires `fzf`
+    - `brew install fzf`
+    - `pacman -S fzf`
 - hyprland
