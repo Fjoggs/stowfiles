@@ -8,7 +8,7 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("i", "clg", "<ESC>:i<CR>console.log('')<CR><BS><ESC>ci'")
 
 -- navigate with ctrl+h,j,k,l
--- handles by nvim-tmux-navigator now
+-- handled by nvim-tmux-navigator now
 -- keymap.set("n", "<C-h>", ":wincmd h<CR>", { silent = true })
 -- keymap.set("n", "<C-j>", ":wincmd j<CR>", { silent = true })
 -- keymap.set("n", "<C-k>", ":wincmd k<CR>", { silent = true })
@@ -72,7 +72,6 @@ wk.add({
 -- Git management
 wk.add({
 	{ "<leader>g", group = "Git management" },
-	{ "<leader>gd", ":Telescope git_bcommits<CR>", desc = "Open git history for active buffer" },
 	{ "<leader>gn", ":Neogit<CR>", desc = "Open NeoGit integration" },
 	{
 		"<leader>gb",
@@ -84,14 +83,14 @@ wk.add({
 	{
 		"<leader>gl",
 		function()
-			require("fzf-lua").git_blame()
+			require("fzf-lua").git_commits()
 		end,
 		desc = "Open git commit log (project)",
 	},
 	{
 		"<leader>gc",
 		function()
-			require("fzf-lua").git_blame()
+			require("fzf-lua").git_bcommits()
 		end,
 		desc = "Open git commit log (buffer)",
 	},
