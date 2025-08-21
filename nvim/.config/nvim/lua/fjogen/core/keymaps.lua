@@ -24,7 +24,6 @@ keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Go half a page down and center the
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Go half a page up and center the screen" })
 
 -- save with ctrl+s
--- keymap.set({ "n", "i" }, "<C-s>", "<esc>:write<CR>", { desc = "Save current buffer" })
 keymap.set({ "n", "i" }, "<C-s>", "<esc>:wa<CR>", { desc = "Save all buffers" })
 
 -- flash
@@ -74,7 +73,7 @@ keymap.set("n", "gR", function()
 	require("fzf-lua").lsp_references()
 end, { desc = "Show LSP references" }) -- show definition, references
 
-keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" }) -- go to declaration
+keymap.set("n", "gd", vim.lsp.buf.declaration, { desc = "Go to declaration" }) -- go to declaration
 
 wk.add({
 	{ "<leader>g", group = "Git management" },
@@ -87,25 +86,11 @@ wk.add({
 		desc = "Open git blame (buffer)",
 	},
 	{
-		"<leader>gc",
-		function()
-			require("fzf-lua").git_bcommits()
-		end,
-		desc = "Open git commit log (buffer)",
-	},
-	{
 		"<leader>gd",
 		function()
-			require("fzf-lua").lsp_definitions()
+			require("fzf-lua").git_commits()
 		end,
-		desc = "See LSP definitions",
-	},
-	{
-		"<leader>gi",
-		function()
-			require("fzf-lua").lsp_implementations()
-		end,
-		desc = "See LSP implementations",
+		desc = "Open git commit log (buffer)",
 	},
 	{
 		"<leader>gl",
@@ -113,20 +98,6 @@ wk.add({
 			require("fzf-lua").git_commits()
 		end,
 		desc = "Open git commit log (project)",
-	},
-	{
-		"<leader>gR",
-		function()
-			require("fzf-lua").lsp_references()
-		end,
-		desc = "See LSP references",
-	},
-	{
-		"<leader>gt",
-		function()
-			require("fzf-lua").lsp_typedefs()
-		end,
-		desc = "See LSP type defintions",
 	},
 })
 
@@ -225,17 +196,6 @@ vim.keymap.set("n", "<leader>ll", function()
 	lint.try_lint()
 end, { desc = "Trigger linting for current file" })
 
-vim.keymap.set("n", "<leader>ls", function()
-	local lint_progress = function()
-		local linters = require("lint").get_running()
-		if #linters == 0 then
-			return "󰦕"
-		end
-		return "󱉶 " .. table.concat(linters, ", ")
-	end
-	lint_progress()
-end, { desc = "Show linters runnings" })
-
 -- Nvim tree
 wk.add({
 	{ "<leader>e", group = "File tree explorer" },
@@ -286,22 +246,12 @@ keymap.set("n", "<F36>", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Find 
 keymap.set("n", "<C-F12>", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Find symbols in document" })
 
 -- <F47> = CTRL+Shift+F12
+--
 keymap.set("n", "<F48>", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "Find symbols in workspace" })
-keymap.set("n", "<C-S-F12", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "Find symbols in workspace" })
+keymap.set("n", "<C-S-F12>", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "Find symbols in workspace" })
 
 -- Diagnostics
 keymap.set("n", "<leader>D", "<cmd>FzfLua diagnostics_document<CR>", { desc = "Show buffer diagnostics" }) -- show  diagnostics for file
-
---- Refactor
-wk.add({
-	{ "<leader>r", group = "Refactor" },
-	{ "<leader>rb", ":Refactor extract_block", desc = "Extract block" },
-	{ "<leader>re", ":Refactor extract", desc = "Extract code to function" },
-	{ "<leader>rf", ":Refactor extract_to_file ", desc = "Extract code to file" },
-	{ "<leader>ri", ":Refactor inline_func", desc = "Inline function" },
-	{ "<leader>rn", ":Refactor inline_var", desc = "Inline variable to value" },
-	{ "<leader>rv", ":Refactor extract_var", desc = "Extract value to variable" },
-})
 
 wk.add({
 	{ "<leader>hh", ":lua vim.diagnostic.open_float()<cr>", desc = "Show diagnostic under line in floating window" },
