@@ -1,0 +1,28 @@
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE: redshift.sh
+# 
+#         USAGE: ./redshift.sh 
+# 
+#   DESCRIPTION: 
+# 
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: YOUR NAME (), 
+#  ORGANIZATION: 
+#       CREATED: 17. feb. 2019 01:27
+#      REVISION:  ---
+#===============================================================================
+
+set -o nounset                              # Treat unset variables as an error
+
+lat="59.911491"
+lon="10.757933"
+
+warm="3000"
+cold="5700"
+
+redshift -l ${lat}:${lon} -t ${cold}:${warm}
