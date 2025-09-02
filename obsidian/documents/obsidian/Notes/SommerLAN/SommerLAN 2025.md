@@ -1,0 +1,146 @@
+
+## Garasjen
+
+- LED-lenkene
+- Masse random nettverkskabler
+- Oppheng til kabler og LED-lenke
+- Bolter/mutter til bord
+
+## Mitt lankit
+
+- 5 nettverkskabler
+	- 1 veldig lang nettverkskabel
+		- Brukes fra modem til switch
+	- 1 kort nettverkskabel
+		- Fra min pc til switch
+	- 1 lang + 2 mellomlange nettverkskabler
+- Strøm til skjerm og PC
+- En ræva HDMI-kabel
+	- Bytt denne før neste lan
+- 2 strømforgrenere
+- HDMI-switch
+- Steam link
+- VannkjølingsTUTÆR  
+
+
+## Generelt
+
+- Verktøy du trenger
+	- 2 skiftenøkler
+	- Hammer
+	- Minidrillen
+	- Bits
+- Hadde ikke stuebordet på kjøkkenet
+	- Funker bra 
+	- Må bare rydde mens man lager mat
+	- Keep this shit
+- Vifter overalt var et must
+	- Snittemperatur på 28++ grader inne under store deler av lanet
+	- 5 vifter totalt
+	- Kunne sikkert hatt enda fler
+- Husk å skru av dørhåndtak på tv-bordet
+- Lineup
+	- Nabovegg, hage->kjøkken
+		- biten
+		- dun
+		- Molbs
+		- Torp
+		- Gody
+		- Jubb (for stol)
+- Games
+	- Mechabellum
+	- World of tanks
+	- 2 obligatoriske runder med Rat dotes
+	- N64
+	- Zelda (snes)
+	- left4dead2 siste dagen (søndag)!
+- Golf
+	- Morgengolf funka bra med julipriser (-100kr)
+		- Tidligste vi spilte var 08:30 for dobbelrunde (neste runde 11:40 elns)
+		- 09:40 og 09:50 var bra tidspunkt for 9-hulls
+- Vi ble til mandag
+	- Espen, grønn, dun, biten, sid
+- B var her, spilte et cs game, bantra i 2 timer og stakk
+- SommerLANs 11. utgave markerer første lan med fler enn PekkyD på linux
+	- nabi og torp installerte arch (btw)
+	- begge spilte på linux resten av lanet etter litt småfikling
+- Husk bobler til åpningsseremoni
+	- Mandag 13:37
+
+
+## Mat
+- Carnitas
+	- 9 personer
+	- Rett under 4k benfri svinenakke
+	- mer salt
+	- 2 løk
+	- 2 appelsin
+	- 4 poser, med en halv løk/appelsin i hver
+	- La i vannbad på 74 grader i 24 timer ca søndag klokken 12
+	- shredda og crispa mengde som fikk plass i en langpanne
+	- resten ble holdt varm i vannbad
+	- filtrerte kraften + fjerna fjett og reduserte
+		- adda til kjøttet rett før servering
+	- Guacamole
+		- En pose med små avokado
+		- 1 halv rødløk
+		- 5 hvitløksfedd
+		- Chili flakes
+		- salt und pepper
+		- halv lime
+		- lag 50% mer
+	- plain fetaost i blokk
+	- salsa verde
+	- salsa
+	- vanlig små first price tortillas
+- Caesar salat
+	- 10 personer
+	- 1.5kg kylling
+	- 1050g bacon
+	- 2 brød til krutonger
+		- Kanskje for mye krutonger sammenlignet med resten, men ble spist opp
+	- 3x2 romano/hjertesalat
+	- Vanlig mengde dressing
+		- Kunne antageligvis lagd 50% mer med så mye krutonger
+	- Litt som alltid hvor folk er mette, men kunne laget mer
+	- Vurdere å ha noe ved siden av som gjør at mengden salat blir den samme?
+	- Evt lag 50% mer
+		- 2kg kylling
+		- 1.5kg bacon
+		- 2 brød til krutonger
+		- 4x2 romano
+- Chili
+	- 2kg høyrygg i terninger (kongeprodukt på Oda)
+	- 800g kjøttdeig 
+	- 400g-ish rester av carnitas (scheduling genius)
+		- Nesten 1kg?
+	- hakket løk
+	- 1 hakket hvitløk (alle feddene)
+	- 1 glass ancho chili paste (Sunkost/Kaktus gunerius)
+	- 1 glass guajillo chili paste (Sunkost/Kaktus gunerius)
+	- 1x0.75L Juells Juelleøl (batch #17 2019 vintage) - må erstattes av annen mørk øl neste gang 
+	- 1ss? knuste korianderfrø
+	- 1ts? malt nellik
+	- 1 stjerneanis 
+	- 2 kanelstenger
+	- 2ss? chili flakes
+	- 2ss? malt spisskummin
+	- 1dl? soyasaus
+	- 1? god squirt sriracha
+	- 2-3ss? worchestershiresaus
+	- 1ss? oregano
+	- 4 bokser hermetiske tomater
+	- 1 glass hakkede soltørkede tomater
+	- 1 plate dronningsjokolade
+	- 2 pakker kidneybønner
+	- 2 pakker bønnemix
+- Lasagne 
+	- 12 personer
+	- Bra mengde, tom etter kveldsmat
+- Fiskesuppe
+	- 9 personer
+	- Riktig mengde
+	- Veldig mye rundstykker igjen, så den mengden hadde vært nok for 12 personer
+- Lørdagspørs
+	- Funka bra, veldig lite oppvask og veldig enkelt
+	- Anbefales

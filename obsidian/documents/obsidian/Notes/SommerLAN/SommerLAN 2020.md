@@ -1,0 +1,111 @@
+Organisering
+
+- Generelt  
+	- 500/50 niceprice  
+  - Be Fredric sette opp det trådløse nettverket på lan-ruteren, evt bruke oppsettet vi hadde i år  
+	- Kablet nett fra lan-ruter og wifi fra ostmarka ruter  
+  - Hekt av skapdøra som jeg rev av for å hindre at det skjer igjen  
+  - Nwbi nevnte i ettertid at vi burde factory resette switchen  
+  - Noen av pcene dukket ikke på steam linken, så rigg opp første dag og verifiser at min pc funker, siden jeg er den som bruker den mest stort sett  
+	- Mulig det var noe med nettverksoppsettet  
+  - Fikk ikke testa 4 player rpg spillet som nwbi fant og Espen kjøpte(?)  
+	- Det hvor death=gg  
+  - Flere in-house eventer  
+	- Turneringer  
+	- CS med spesielle regler  
+	- 4-player et-eller-annet i retrouloungen  
+	- Kanskje sett et tidspunkt på forhånd hvor noe sånt skjer, så blir det lettere å gjennomføre  
+- Soveplasser i 2020  
+  - FN og gody på sindre-rommet  
+  - Nwbi på mitt rom  
+  - Sid hadde stuffet sitt på martines rom, men han sov hjemme isteden (dro ca klokka 2\)  
+    - Molbs sov der når han kom på lanet  
+  - Audun og biten på dobbeltrommet  
+  - Meg og jubb i kjelleren i dobbeltsenga i kjelleren, taxi på gulvet med “putemadrassen” fra martines rom  
+    - Jeg fikk mindre vondt i ryggen av taxi sin madrass enn den harde sovesofaen  
+  - Torp sov hjemme hver dag  
+    - Totalt 9 plasser brukt  
+- Bord  
+  - Fantastisk løsning med nytt bord \+ retro lounge  
+  - Overtal espen til å ikke ta med stol, siden hans er så stor?  
+  - Finn ut hvem som faktisk skal være på lanet etter at de har kommet  
+    - Dun og biten var der flere dager enn feks Molbs, men molbs var faktisk på lanet når han var der  
+    - Dun og biten er veldig mye oppe og går, så de bør sitte feks nærmest kjøkkenet på kjøkkensiden  
+  - Finn en bedre spot for switchen  
+    - Mulig å lage et oppheng av noe slag ved bordenden?  
+  - Folk bør skaffe seg ekstra store musematter (90cm), sånn at bordkanten ikke er et problem. Dun og biten teipet kanten fordi den var litt ubehagelig over tid  
+- Kjøkken  
+  - Et glass til hver er en veldig bra løsning for å redusere oppvasken  
+  - Ny løsningen gjorde kjøkkenet utrolig mye bedre å bruke. Ikke de samme problemene med oppbevaring av mat. Ny kjellerløsning gjorde det også mer naturlig å oppbevare ting nede  
+  - Fryseplass gikk overraskende bra, men det er mye tilfeldigheter  
+    - God ide å ta ett av brødene i fryseren oppe for å frigjøre litt plass der  
+  - Frysebag var nice løsning for drikkevarer  
+- Mat  
+  - Middag klokken “19” (fast tidspunkt) funket veldig bra  
+  - Lag falafelmiks og hummus hjemme sånn at jeg ikke må ta med food processor  
+  - Husk olje til fritering hvis det planlegges å gjøre det før handletur  
+  - Hamburger/fries  
+    - Høyrygg med mer til var veldig bra miks. Mye bedre enn kun høyrygg  
+    - 200g var bra size  
+    - Lag et par ekstra, siden det plutselig kan dukke opp gjester  
+    - Koke, fritere og så fryse ned var antageligvis ikke vært bryet  
+      - Potene var ikke så myke som de vanligvis er  
+      - Mulig koke og så en runde i frieren er like greit, samme dag som mat  
+  - Fiskecurry  
+    - Veldig bra lanmat  
+      - Lett å lage til mange, og veldig god  
+    - Rød currypaste fra tyrkersjappa på manglerud  
+    - Ca 1.5kg torsk  
+    - 400g risnudler (1 pakke fra tyrkersjappe) var mer enn nok til 8 pers  
+  - Falafel  
+    - Masse urter var the way to go (mye koriander og persille)  
+    - Firedobling av tortilla-oppskrift ga ca 22 lefser  
+      - https://trinesmatblogg.no/recipe/hjemmelagde-hvetetortillas/  
+    - Ca 1.2kg tørkede kikerter var perfekt til 10 personer  
+    - Bruke pose for å forme falafel var big  
+      - Fryse ned formede falafel og så tine igjen var ikke big. De løsnet når de tinte, og jeg måtte forme de på nytt igjen  
+    - Jernpanna ble muligens litt vel varme, så tortillaen ble litt crunchy  
+  - Pulled pork  
+    - Veldig fint å lage  
+    - 3.5 kg var perfekt for ca 9 personer  
+    - Begynte å lage ca halv 2, og var ferdig på grillen rundt halv 7 (hvis jeg husker riktig)  
+    - En pose med (whiskey) chips var mer enn nok. Brukte ca halvparten  
+    - Bittelitt tørt og muligens litt lenge på grillen  
+      - Prøv med eplecider i en bolle på grillen  
+      - Injection?  
+    - Brunt sukker, paprika, hvitløkspulver, sennespulver, salt og pepper som rub  
+  - Chili  
+    - Veldig bra lanmat  
+  - Ceviche og laksefusion  
+    - Veldig god i år, og mer enn nok som middag  
+    - Quinoa funka som side dish  
+  - Frokost  
+    - Ble basically ikke spist knekkebrød virket det som  
+    - Brød var veien å gå  
+      - Var igjen ca 3 brød  
+    - Jalapeno smøreost ble det spist en del av  
+    - Salami ble spist  
+    - Strynskinke/spekeskinke ble ikke spist i det hele tatt  
+  - Snacks  
+    - Absurde mengder med nonstop. 4 taxfree poser gikk basically før lanet hadde begynt, og vi gikk tom selv med 7 poser innkjøpt  
+    - Kunne sikkert kjøpt inn 15 poser uten problemer  
+    - Ble spist litt mer potetgull i år siden det stod mer synlig, men nonstop/sjokkis virket å være mer populært  
+    - Mest svartcola, men noen ville ha rød  
+- Retrolounge  
+  - Ingen filmer siden det nesten alltid gikk i gaming der  
+  - Husk hdmi switchen  
+  - Unødvendig å flytte tv-boksen. Trenger kun TVen og chromecasten  
+    - Kan se på tv via twe-appen
+
+Lankittet:
+
+- Strøm:  
+  - 4x 3 porter  
+  - 1x 6 porter  
+  - 1x 5 porter  
+- Nettverk  
+  - 3 uendelig lange cat 6
+
+Games for neste år:
+
+- Gunfire Reborn
