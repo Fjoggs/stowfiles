@@ -1,0 +1,29 @@
+meta {
+  name: POST Order Status
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{vitecApi}}/{{installationId}}/Orders/{{orderId}}/Status?message={{message}}&status={{status}}&url={{url}}
+  body: none
+  auth: basic
+}
+
+query {
+  message: {{message}}
+  status: {{status}}
+  url: {{url}}
+}
+
+auth:basic {
+  username: bakken
+  password: e73L3mszgbjxuzn9dJAes55Ml5AjUJuVvEupMX7YZXyqn3snhV
+}
+
+vars:pre-request {
+  orderId: 6d27313f-c0dc-4a3e-bca3-8ef8940cabc7
+  message: Portal opprettet
+  status: 6
+  url: http://localhost:8001/api/admin/auth?auth_token=TYmfUdch2CvYQ2h8thH1ps6fXoxqpj7m&agent_id=<userid>&order_id=<orderid>&sale_id=276
+}
