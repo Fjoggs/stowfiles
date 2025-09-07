@@ -1,0 +1,20 @@
+meta {
+  name: GET Order Status
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{vitecApi}}/{{installationId}}/Orders/{{orderId}}/Status
+  body: none
+  auth: basic
+}
+
+auth:basic {
+  username: bakken
+  password: e73L3mszgbjxuzn9dJAes55Ml5AjUJuVvEupMX7YZXyqn3snhV
+}
+
+vars:pre-request {
+  orderId: 6d27313f-c0dc-4a3e-bca3-8ef8940cabc7
+}
