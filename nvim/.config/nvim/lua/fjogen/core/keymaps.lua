@@ -135,45 +135,45 @@ keymap.set("n", "<Leader>lp", function()
 	dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
 end)
 
-wk.add({
-	{ "<leader>d", group = "Debugger" },
-	{
-		"<leader>df",
-		function()
-			dap_ui_widgets.centered_float(dap_ui_widgets.frames)
-		end,
-		desc = "Centered float DAP frames",
-	},
-	{
-		"<leader>dh",
-		function()
-			dap_ui_widgets.hover()
-		end,
-		desc = "Show DAP hover widget",
-	},
-	{
-		"<leader>dl",
-		function()
-			dap.run_last()
-		end,
-		desc = "Run last DAP",
-	},
-	{
-		"<leader>dp",
-		function()
-			dap_ui_widgets.preview()
-		end,
-		desc = "Show DAP preview widget",
-	},
-	{ "<leader>dr", ":DapToggleRepl<CR>", desc = "Toggles the DAP repl" },
-	{
-		"<leader>ds",
-		function()
-			dap_ui_widgets.centered_float(dap_ui_widgets.scopes)
-		end,
-		desc = "Centered float DAP scopes",
-	},
-})
+-- wk.add({
+-- 	{ "<leader>d", group = "Debugger" },
+-- 	{
+-- 		"<leader>df",
+-- 		function()
+-- 			dap_ui_widgets.centered_float(dap_ui_widgets.frames)
+-- 		end,
+-- 		desc = "Centered float DAP frames",
+-- 	},
+-- 	{
+-- 		"<leader>dh",
+-- 		function()
+-- 			dap_ui_widgets.hover()
+-- 		end,
+-- 		desc = "Show DAP hover widget",
+-- 	},
+-- 	{
+-- 		"<leader>dl",
+-- 		function()
+-- 			dap.run_last()
+-- 		end,
+-- 		desc = "Run last DAP",
+-- 	},
+-- 	{
+-- 		"<leader>dp",
+-- 		function()
+-- 			dap_ui_widgets.preview()
+-- 		end,
+-- 		desc = "Show DAP preview widget",
+-- 	},
+-- 	{ "<leader>dr", ":DapToggleRepl<CR>", desc = "Toggles the DAP repl" },
+-- 	{
+-- 		"<leader>ds",
+-- 		function()
+-- 			dap_ui_widgets.centered_float(dap_ui_widgets.scopes)
+-- 		end,
+-- 		desc = "Centered float DAP scopes",
+-- 	},
+-- })
 
 -- Undotree
 keymap.set("n", "<leader>u", "<cmd>:UndotreeToggle<CR>", { desc = "Shows the undo tree" })
@@ -232,15 +232,6 @@ wk.add({
 	},
 })
 
--- Zen mode
-keymap.set("n", "<leader>z", function()
-	require("zen-mode").toggle({
-		window = {
-			width = 0.85, -- width will be 85% of the editor width
-		},
-	})
-end, { desc = "Toggle zenmode" }) --  move current buffer to new tab
-
 -- <F36> = CTRL+F12
 keymap.set("n", "<F36>", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Find symbols in document" })
 keymap.set("n", "<C-F12>", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Find symbols in document" })
@@ -256,3 +247,17 @@ keymap.set("n", "<leader>D", "<cmd>FzfLua diagnostics_document<CR>", { desc = "S
 wk.add({
 	{ "<leader>hh", ":lua vim.diagnostic.open_float()<cr>", desc = "Show diagnostic under line in floating window" },
 })
+
+-- LSP
+keymap.set({ "n", "v" }, "<C-space>", vim.lsp.buf.code_action, { desc = "See availabel code action", silent = true }) -- see available code actions, in visual mode will apply to selection
+keymap.set("n", "<F18>", vim.lsp.buf.rename, opts) -- F18 = Shift + F6
+keymap.set("n", "<S-F6>", vim.lsp.buf.rename, opts)
+keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics" }) -- show diagnostics for line
+keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" }) -- jump to previous diagnostic in buffer
+keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" }) -- jump to next diagnostic in buffer
+keymap.set("n", "<C-p>", vim.lsp.buf.hover, { desc = "Show documentation for what is under cursor" }) -- show documentation for what is under cursor
+keymap.set("n", "<leader>rs", ":LspRestart<CR>", { desc = "Restart LSP" }) -- mapping to restart lsp if necessary
+
+-- Line wise comment toggle
+local api = require("Comment.api")
+keymap.set("n", "<C-/>", api.toggle.linewise.current, { desc = "Toggle comment on active line" })
