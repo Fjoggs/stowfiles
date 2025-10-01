@@ -191,4 +191,6 @@ eval "$(zoxide init bash)"
 # Fast node manager (alternative to nvm)
 eval "$(fnm env --use-on-cd --shell bash)"
 
+# Added by Toolbox App
+export PATH="$PATH:/home/fjogen/.local/share/JetBrains/Toolbox/scripts"
 
