@@ -22,3 +22,10 @@ alias kssh="kitty +kitten ssh"
 
 alias dir='eza -l -a --git -o --no-user --no-time -T -I ".git|.DS_Store|node_modules" --icons --header'
 
+# Replace ls with eza
+alias ls='eza --color=auto --group-directories-first'
+alias ll='eza -la --color=auto --group-directories-first'
+alias la='eza -a --color=auto --group-directories-first'
+alias l='eza -l --color=auto --group-directories-first'
+alias tree='eza --tree'
+
