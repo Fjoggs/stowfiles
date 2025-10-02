@@ -86,9 +86,9 @@ wk.add({
 		desc = "Open git blame (buffer)",
 	},
 	{
-		"<leader>gd",
+		"<leader>gc",
 		function()
-			require("fzf-lua").git_commits()
+			require("fzf-lua").git_bcommits()
 		end,
 		desc = "Open git commit log (buffer)",
 	},
@@ -215,6 +215,7 @@ keymap.set("n", "<C-n>", "<cmd>FzfLua files<cr>", { desc = "Find files" })
 wk.add({
 	{ "<leader>f", group = "FzLua commands" },
 	{ "<leader>fc", "<cmd>FzfLua grep_cword<cr>", desc = "Find word under cursor" },
+	{ "<leader>fb", "<cmd>FzfLua buffers<cr>", desc = "See open buffers" },
 	{
 		"<leader>fq",
 		function()
