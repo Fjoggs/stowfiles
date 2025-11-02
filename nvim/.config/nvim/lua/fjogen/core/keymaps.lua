@@ -73,7 +73,10 @@ keymap.set("n", "gR", function()
 	require("fzf-lua").lsp_references()
 end, { desc = "Show LSP references" }) -- show definition, references
 
-keymap.set("n", "gd", vim.lsp.buf.declaration, { desc = "Go to declaration" }) -- go to declaration
+keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+keymap.set("n", "gD", function()
+	require("fzf-lua").lsp_declarations()
+end, { desc = "Show declarations" })
 
 wk.add({
 	{ "<leader>g", group = "Git management" },
@@ -210,6 +213,12 @@ keymap.set("n", "¹", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file e
 keymap.set("n", "<a-1>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
 
 -- fzf-lua
+keymap.set(
+	{ "n", "v" },
+	"<C-space>",
+	"<cmd>FzfLua lsp_code_actions<cr>",
+	{ desc = "See availabel code action", silent = true }
+) -- see available code actions, in visual mode will apply to selection
 keymap.set("n", "<C-n>", "<cmd>FzfLua files<cr>", { desc = "Find files" })
 
 wk.add({
@@ -250,7 +259,6 @@ wk.add({
 })
 
 -- LSP
-keymap.set({ "n", "v" }, "<C-space>", vim.lsp.buf.code_action, { desc = "See availabel code action", silent = true }) -- see available code actions, in visual mode will apply to selection
 keymap.set("n", "<F18>", vim.lsp.buf.rename, opts) -- F18 = Shift + F6
 keymap.set("n", "<S-F6>", vim.lsp.buf.rename, opts)
 keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics" }) -- show diagnostics for line
