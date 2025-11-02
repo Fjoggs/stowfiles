@@ -107,8 +107,8 @@ wk.add({
 -- Session management
 wk.add({
 	{ "<leader>w", group = "Session management" },
-	{ "<leader>wr", "<cmd>SessionRestore<CR>", desc = "Restore session for cwd" },
-	{ "<leader>ws", "<cmd>SessionSave<CR>", desc = "Save session for cwd" },
+	{ "<leader>wr", "<cmd>AutoSession restore<CR>", desc = "Restore session for cwd" },
+	{ "<leader>ws", "<cmd>AutoSession save<CR>", desc = "Save session for cwd" },
 })
 
 -- Debugger
