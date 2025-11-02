@@ -1,11 +1,13 @@
 return {
 	"mason-org/mason-lspconfig.nvim",
-	opts = {},
-	config = function()
-		require("mason-lspconfig").setup({
-			ensure_installed = { "basedpyright", "ruff" },
-		})
-	end,
+	opts = {
+		ensure_installed = {
+			"basedpyright",
+      "lua_ls",
+			"ruff",
+			"ts_ls",
+		},
+	},
 	dependencies = {
 		{ "mason-org/mason.nvim", opts = {} },
 		"neovim/nvim-lspconfig",
