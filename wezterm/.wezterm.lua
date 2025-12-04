@@ -9,6 +9,9 @@ config.font_size = 12
 config.color_scheme = "MaterialOcean"
 config.window_background_opacity = 0.5
 
+-- tabs
+config.hide_tab_bar_if_only_one_tab = true
+
 -- keybinds with leader key
 config.leader = { key = "a", mods = "CTRL" }
 config.keys = {
