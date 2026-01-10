@@ -7,11 +7,58 @@ local config = wezterm.config_builder()
 -- general settings
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 12
-config.color_scheme = "MaterialOcean"
+local oceanicScheme = wezterm.color.get_builtin_schemes()["MaterialDesignColors"]
+local oceanicColor = "#25363B"
+oceanicScheme.background = oceanicColor
+
+config.color_schemes = {
+	-- Override the builtin Gruvbox Light scheme with our modification.
+	["Material Oceanic"] = oceanicScheme,
+}
+--
+config.color_scheme = "Material Oceanic"
+
+-- window
 config.window_background_opacity = 0.90
+
+config.window_frame = {
+	border_left_width = "0px",
+	border_right_width = "0px",
+	border_top_height = "0px",
+	border_bottom_height = "0px",
+}
+
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
 
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
+
+-- colors
+config.colors = {
+	tab_bar = {
+		background = oceanicColor,
+
+		active_tab = {
+			bg_color = oceanicColor,
+			fg_color = "#F5B74F",
+			intensity = "Bold",
+		},
+
+		inactive_tab = {
+			bg_color = oceanicColor,
+			fg_color = "#808080",
+
+			-- The same options that were listed under the `active_tab` section above
+			-- can also be used for `inactive_tab`.
+		},
+	},
+}
 
 -- keybinds with leader key
 config.leader = { key = "a", mods = "CTRL" }
