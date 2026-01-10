@@ -16,8 +16,6 @@ return {
 				json = { "prettier" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
-				graphql = { "prettier" },
-				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "black" },
 				go = { "gofumpt", "goimports-reviser", "golines" },
@@ -30,3 +28,4 @@ return {
 		})
 	end,
 }
+
