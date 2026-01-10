@@ -19,7 +19,7 @@ config.color_schemes = {
 config.color_scheme = "Material Oceanic"
 
 -- window
-config.window_background_opacity = 0.90
+config.window_background_opacity = 0.75
 
 config.window_frame = {
 	border_left_width = "0px",
