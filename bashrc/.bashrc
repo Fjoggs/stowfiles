@@ -16,83 +16,6 @@ shopt -s checkwinsize
 [[ -z "$FUNCNEST" ]] && export FUNCNEST=100          # limits recursive functions, see 'man bash'
 
 
-## Use the up and down arrow keys for finding a command in history
-## (you can write some initial letters of the command first).
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
-
-# Set up TERM variables.
-# vt100 and xterm have no color in vim (at least on unixs), but if we call them xterm-color, they will.
-# (vt100 for F-Secure SSH.)
-# This may well be the case for some other terms, so I'm putting them here.
-# Also set up a variable to indicate whether to set up the title functions.
-# TODO gnome-terminal, or however it reports itself
-case $TERM in
-
-  screen)
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=false
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=false
-    TERM_CAN_TITLE=true
-  ;;
-
-  xterm-color|color_xterm|rxvt|Eterm|screen*) # screen.linux|screen-w
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=false
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=true
-    TERM_CAN_TITLE=true
-  ;;
-
-  linux)
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=false
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=true
-    TERM_CAN_TITLE=false
-  ;;
-
-  xterm|vt100)
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=true
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=false
-    TERM_CAN_TITLE=true
-  ;;
-
-  *xterm*|eterm|rxvt*)
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=true
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=true
-    TERM_CAN_TITLE=true
-  ;;
-
-  alacritty)
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=false
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=true
-    TERM_CAN_TITLE=true
-  ;;
-
-  *)
-    TERM_IS_COLOR=false
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=false
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=false
-    TERM_CAN_TITLE=false
-  ;;
-
-esac
-
-# dircolors... make sure that we have a color terminal, dircolors exists, and ls supports it.
-if $TERM_IS_COLOR && ( dircolors --help && ls --color ) &> /dev/null; then
-  alias ls="ls --color=auto"
-  alias ll="ls --color=auto -l"
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
-else
-  # No color, so put a slash at the end of directory names, etc. to differentiate.
-  alias ls="ls -F"
-  alias ll="ls -lF"
-fi
-
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -104,21 +27,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-# Set $TERM for libvte terminals that set $TERM wrong (like gnome-terminal)
-{
-  [ "_$TERM" = "_xterm" ] && type ldd && type grep && type tput && [ -L "/proc/$PPID/exe" ] && {
-    if ldd /proc/$PPID/exe | grep libvte; then
-      if [ "`tput -Txterm-256color colors`" = "256" ]; then
-        TERM=xterm-256color
-      elif [ "`tput -Txterm-256color colors`" = "256" ]; then
-        TERM=xterm-256color
-      elif tput -T xterm; then
-        TERM=xterm
-      fi
-    fi
-  }
-} >/dev/null 2>/dev/null
 
 parse_git_branch ()
 {

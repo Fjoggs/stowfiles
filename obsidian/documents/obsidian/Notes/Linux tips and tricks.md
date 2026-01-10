@@ -43,4 +43,4 @@ xinput --set-prop 16 "libinput Tapping Enabled" 1
 6. run `mapwacom --list-screens` and find the tablet name (usually `HDMI-A-0`)
 7. Run the script with the `-d` flag and add the name of the stylus, the eraser and the screen to map the area
 	1. Example: `sh mapwacom.sh -d "Wacom Cintiq 16 Pen stylus" -d "Wacom Cintiq 16 Pen eraser" -s "HDMI-A-0"`
-8. Tablet shold now work!
+8. Tablet should now work!
