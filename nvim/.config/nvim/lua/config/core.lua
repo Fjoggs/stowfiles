@@ -1,32 +1,30 @@
-vim.cmd("let g:netrw_liststyle = 3")
+-- disable netrw for nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 local opt = vim.opt
 
 opt.relativenumber = true
 opt.number = true
+opt.cursorline = true
 
 -- tabs & indentation
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
-
 opt.wrap = false
 
 --search settings
 opt.ignorecase = true
 opt.smartcase = true
 
-opt.cursorline = true
-
 -- colors
 opt.termguicolors = true
-opt.background = "dark"
-opt.signcolumn = "yes"
 
 -- backspace
 opt.backspace = "indent,eol,start"
 
--- split windows
+-- windows
 opt.splitright = true
 opt.splitbelow = true
