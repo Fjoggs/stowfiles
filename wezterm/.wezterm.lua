@@ -5,9 +5,10 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- general settings
+config.font = wezterm.font("JetBrains Mono")
 config.font_size = 12
 config.color_scheme = "MaterialOcean"
-config.window_background_opacity = 0.5
+config.window_background_opacity = 0.90
 
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
