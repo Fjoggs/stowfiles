@@ -1,43 +1,58 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
+local home = os.getenv("HOME")
+local macOs = false
+if home == "/Users/fjogen" then
+	macOs = true
+end
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
 -- general settings
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 12
+
+if macOs then
+	config.font_size = 16
+else
+	config.font_size = 12
+end
+
 local oceanicScheme = wezterm.color.get_builtin_schemes()["MaterialDesignColors"]
 local oceanicColor = "#25363B"
 oceanicScheme.background = oceanicColor
 
 config.color_schemes = {
-	-- Override the builtin Gruvbox Light scheme with our modification.
+	-- Create a new theme which is equal to MaterialDesignColors except for the background
 	["Material Oceanic"] = oceanicScheme,
 }
---
 config.color_scheme = "Material Oceanic"
 
 -- window
-config.window_background_opacity = 0.75
+if macOs then
+	config.window_background_opacity = 1
+else
+	config.window_background_opacity = 0.75
+end
 
 config.window_frame = {
 	border_left_width = "0px",
 	border_right_width = "0px",
-	border_top_height = "0px",
+	border_top_height = "10px",
 	border_bottom_height = "0px",
 }
 
 config.window_padding = {
 	left = 0,
 	right = 0,
-	top = 0,
+	top = 10,
 	bottom = 0,
 }
 
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
+config.window_decorations = "NONE"
 
 -- colors
 config.colors = {
@@ -102,10 +117,19 @@ wezterm.on("update-status", function(window, pane)
 	if window:leader_is_active() then
 		leader = "Leader"
 	end
+
+	-- Left status
 	window:set_left_status(wezterm.format({
 		{ Attribute = { Underline = "Single" } },
 		{ Attribute = { Italic = true } },
 		{ Text = leader },
+	}))
+
+	-- Right status
+	local time = wezterm.strftime("%H:%M") -- 24h clock
+	window:set_right_status(wezterm.format({
+		{ Text = time },
+		{ Text = " " }, -- Pads the right side of the clock
 	}))
 end)
 
