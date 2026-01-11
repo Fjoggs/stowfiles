@@ -15,9 +15,10 @@ config.font = wezterm.font("JetBrains Mono")
 if macOs then
 	config.font_size = 16
 else
-	config.font_size = 12
+	config.font_size = 13
 end
 
+config.font = wezterm.font("JetBrains Mono")
 local oceanicScheme = wezterm.color.get_builtin_schemes()["MaterialDesignColors"]
 local oceanicColor = "#25363B"
 oceanicScheme.background = oceanicColor
@@ -32,7 +33,7 @@ config.color_scheme = "Material Oceanic"
 if macOs then
 	config.window_background_opacity = 1
 else
-	config.window_background_opacity = 0.75
+	config.window_background_opacity = 1
 end
 
 config.window_frame = {
