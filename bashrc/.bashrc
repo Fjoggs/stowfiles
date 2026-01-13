@@ -27,10 +27,19 @@ PATH_COLOR="\[\e[1;38;5;110m\]"  # bold oceanic cyan gray
 # Git branch
 parse_git_branch() {
   branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-  [[ -n $branch ]] && echo "($branch)"
+  if ! git diff --quiet 2>/dev/null; then
+    dirty="*"
+  fi
+
+  [[ -n $branch ]] && echo "(${branch}${dirty})"
 }
 
 # Prompt
+# Detect SSH session
+is_ssh() {
+    [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]
+}
+
 export PS1="${PATH_COLOR}\w ${ACCENT}\$(parse_git_branch) ${MAIN}"
 
 # PATH setup
