@@ -9,7 +9,7 @@ end
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- general settings
+-- font
 config.font = wezterm.font("JetBrains Mono")
 
 if macOs then
@@ -18,16 +18,29 @@ else
 	config.font_size = 13
 end
 
-config.font = wezterm.font("JetBrains Mono")
-local oceanicScheme = wezterm.color.get_builtin_schemes()["MaterialDesignColors"]
-local oceanicColor = "#25363B"
-oceanicScheme.background = oceanicColor
+-- colors
+local oceanicColor = "hsl:193 23 19"
+local oceanicColorMuted = "hsl:193 13 19"
+config.color_scheme = "MaterialDesignColors"
+config.colors = {
+	background = oceanicColor,
+	split = oceanicColorMuted,
 
-config.color_schemes = {
-	-- Create a new theme which is equal to MaterialDesignColors except for the background
-	["Material Oceanic"] = oceanicScheme,
+	tab_bar = {
+		background = oceanicColor,
+
+		active_tab = {
+			bg_color = oceanicColor,
+			fg_color = "#F5B74F",
+			intensity = "Bold",
+		},
+
+		inactive_tab = {
+			bg_color = oceanicColor,
+			fg_color = "#808080",
+		},
+	},
 }
-config.color_scheme = "Material Oceanic"
 
 -- window
 if macOs then
@@ -54,27 +67,6 @@ config.window_padding = {
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 config.window_decorations = "NONE"
-
--- colors
-config.colors = {
-	tab_bar = {
-		background = oceanicColor,
-
-		active_tab = {
-			bg_color = oceanicColor,
-			fg_color = "#F5B74F",
-			intensity = "Bold",
-		},
-
-		inactive_tab = {
-			bg_color = oceanicColor,
-			fg_color = "#808080",
-
-			-- The same options that were listed under the `active_tab` section above
-			-- can also be used for `inactive_tab`.
-		},
-	},
-}
 
 -- keybinds with leader key
 config.leader = { key = "a", mods = "CTRL" }

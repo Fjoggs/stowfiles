@@ -34,12 +34,6 @@ parse_git_branch() {
   [[ -n $branch ]] && echo "(${branch}${dirty})"
 }
 
-# Prompt
-# Detect SSH session
-is_ssh() {
-    [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]
-}
-
 export PS1="${PATH_COLOR}\w ${ACCENT}\$(parse_git_branch) ${MAIN}"
 
 # PATH setup
