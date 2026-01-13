@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+set -o vi
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
@@ -21,27 +23,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
-parse_git_branch ()
-{
-  git branch 2> /dev/null | grep '*' | sed 's#*\ \(.*\)#(git::\1)#'
+parse_git_branch() {
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+  if [ -n "$branch" ]; then
+    echo "($branch)"
+  fi
 }
-parse_svn_branch() {
-  parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk -F / '{print "(svn::"$1 "/" $2 ")"}'
-}
-parse_svn_url() {
-  svn info 2>/dev/null | sed -ne 's#^URL: ##p'
-}
-parse_svn_repository_root() {
-  svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
-}
-set -o vi
 
 # colors
 BOLD="\[$(tput bold)\]"
@@ -51,18 +38,31 @@ BLUE="\[$(tput setaf 33)\]"
 LIGHT_GREEN="\[$(tput setaf 118)\]"
 PINK="\[\e[38;5;201m\]"
 WHITE="\[\e[01;37m\]"
+LIGHT_GRAY="\[\e[0;37m\]"
+PS_COLOR="\[\e[38;5;252m\]"
+
+# Oceanic theme colors
+MAIN="\[\e[38;5;252m\]"        # soft light gray
+ACCENT="\[\e[38;5;114m\]"      # mint green (git branch)
+SYMBOL="\[\e[38;5;110m\]"      # cyan arrow
+PS_COLOR="\[\e[38;5;252m\]"       # soft light gray
+LIGHT_GREEN="\[\e[38;5;114m\]"    # nice readable green
+PATH_COLOR="\[\e[1;38;5;110m\]" # bold cyan gray
+RESET="\[\e[0m\]"
+
 
 
 # Pinky
 # export PS1="\[[${BOLD}${PINK} \u${WHITE}@${PINK}\h ${WHITE}\w ] \$(parse_git_branch)\n-> \]"
 
 # Orange
-export PS1="${BOLD}${WHITE}[ ${ORANGE}\u${WHITE}@${BLUE}\h ${WHITE}\w ] \$(parse_git_branch)\n-> ${ORANGE}"
+# export PS1="${BOLD}${WHITE}[ ${ORANGE}\u${WHITE}@${BLUE}\h ${WHITE}\w ] \$(parse_git_branch)\n-> ${ORANGE}"
+
+export PS1="${PATH_COLOR}\w ${ACCENT}\$(parse_git_branch) ${SYMBOL}${MAIN}"
 export PS0=${REGULAR}
 
 
-# Add git and svn branch names
-export PS1="$PS1\$(parse_git_branch)\$(parse_svn_branch) "
+
 
 # Local bin folder
 export BIN=$HOME/bin
@@ -74,7 +74,6 @@ export PATH=$BIN:$PATH
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # bash parameter completion for the dotnet CLI
-
 function _dotnet_bash_complete()
 {
   local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n'
@@ -98,7 +97,4 @@ eval "$(zoxide init bash)"
 
 # Fast node manager (alternative to nvm)
 eval "$(fnm env --use-on-cd --shell bash)"
-
-# Added by Toolbox App
-export PATH="$PATH:/home/fjogen/.local/share/JetBrains/Toolbox/scripts"
 

@@ -37,10 +37,10 @@ else
 end
 
 config.window_frame = {
-	border_left_width = "0px",
-	border_right_width = "0px",
+	border_left_width = "10px",
+	border_right_width = "10px",
 	border_top_height = "10px",
-	border_bottom_height = "0px",
+	border_bottom_height = "10px",
 }
 
 config.window_padding = {
