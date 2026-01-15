@@ -1,3 +1,7 @@
+-- LEADER KEY IS SET IN lazy.lua
+-- LEADER KEY IS SET IN lazy.lua
+-- LEADER KEY IS SET IN lazy.lua
+
 local keymap = vim.keymap
 local wk = require("which-key")
 
@@ -17,8 +21,6 @@ keymap.set("n", "<C-j>", ":wincmd j<CR>", { silent = true })
 keymap.set("n", "<C-k>", ":wincmd k<CR>", { silent = true })
 keymap.set("n", "<C-l>", ":wincmd l<CR>", { silent = true })
 
-
-
 -- LSP
 keymap.set("n", "gR", vim.lsp.buf.references, { desc = "Show LSP references" }) -- show definition, references
 keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
@@ -35,7 +37,6 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>", { desc = "Restart LSP" }) -- ma
 -- ¹ is opt+1
 keymap.set("n", "¹", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 keymap.set("n", "<a-1>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
-
 
 -- FzfLua
 local fzf = require("fzf-lua")
@@ -79,5 +80,3 @@ keymap.set("n", "<C-S-F12>", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "
 
 -- Diagnostics
 keymap.set("n", "<leader>D", "<cmd>FzfLua diagnostics_document<CR>", { desc = "Show buffer diagnostics" }) -- show  diagnostics for file
-
-

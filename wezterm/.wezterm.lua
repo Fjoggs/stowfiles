@@ -66,7 +66,7 @@ config.window_padding = {
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
-config.window_decorations = "NONE"
+config.window_decorations = "RESIZE"
 
 -- keybinds with leader key
 config.leader = { key = "a", mods = "CTRL" }
