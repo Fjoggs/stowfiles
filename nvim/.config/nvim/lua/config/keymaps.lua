@@ -22,7 +22,8 @@ keymap.set("n", "<C-k>", ":wincmd k<CR>", { silent = true })
 keymap.set("n", "<C-l>", ":wincmd l<CR>", { silent = true })
 
 -- LSP
-keymap.set("n", "gR", vim.lsp.buf.references, { desc = "Show LSP references" }) -- show definition, references
+-- keymap.set("n", "gR", vim.lsp.buf.references, { desc = "Show LSP references" }) -- show definition, references
+keymap.set("n", "gR", "<cmd>FzfLua lsp_references<cr>", { desc = "Show LSP references" }) -- show definition, references
 keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to definition" })
 keymap.set("n", "<F18>", vim.lsp.buf.rename, { desc = "Rename variable" }) -- F18 = Shift + F6
@@ -42,9 +43,9 @@ keymap.set("n", "<a-1>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle fil
 local fzf = require("fzf-lua")
 keymap.set(
 	{ "n", "v" },
-	"<C-space>",
+	"<leader>ca",
 	"<cmd>FzfLua lsp_code_actions<cr>",
-	{ desc = "See availabel code action", silent = true }
+	{ desc = "See available code action", silent = true }
 ) -- see available code actions, in visual mode will apply to selection
 keymap.set("n", "<C-n>", "<cmd>FzfLua files<cr>", { desc = "Find files" })
 
@@ -69,6 +70,32 @@ wk.add({
 	},
 })
 
+-- Git related commands
+wk.add({
+	{ "<leader>g", group = "Git actions" },
+	{
+		"<leader>gb",
+		function()
+			require("fzf-lua").git_blame()
+		end,
+		desc = "Open git blame (buffer)",
+	},
+	{
+		"<leader>gc",
+		function()
+			require("fzf-lua").git_bcommits()
+		end,
+		desc = "Open git commit log (buffer)",
+	},
+	{
+		"<leader>gl",
+		function()
+			require("fzf-lua").git_commits()
+		end,
+		desc = "Open git commit log (project)",
+	},
+})
+
 -- <F36> = CTRL+F12
 keymap.set("n", "<F36>", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Find symbols in document" })
 keymap.set("n", "<C-F12>", "<cmd>FzfLua lsp_document_symbols<cr>", { desc = "Find symbols in document" })
@@ -80,3 +107,22 @@ keymap.set("n", "<C-S-F12>", "<cmd>FzfLua lsp_workspace_symbols<cr>", { desc = "
 
 -- Diagnostics
 keymap.set("n", "<leader>D", "<cmd>FzfLua diagnostics_document<CR>", { desc = "Show buffer diagnostics" }) -- show  diagnostics for file
+
+-- Debugging
+local dap = require("dap")
+
+keymap.set("n", "<F5>", function()
+	dap.continue()
+end)
+keymap.set("n", "<F8>", function()
+	dap.step_over()
+end)
+keymap.set("n", "<F7>", function()
+	dap.step_into()
+end)
+keymap.set("n", "<F12>", function()
+	dap.step_out()
+end)
+keymap.set("n", "<Leader>b", function()
+	dap.toggle_breakpoint()
+end)

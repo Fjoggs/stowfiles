@@ -66,7 +66,18 @@ config.window_padding = {
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
-config.window_decorations = "NONE"
+
+-- window
+if macOs then
+	-- None doesn't play nice with aerospace and removes possibility of
+	-- drag resizing windows apparently
+	config.window_decorations = "RESIZE"
+	-- Use Option key as Meta for word jumping
+	config.send_composed_key_when_left_alt_is_pressed = false
+	config.send_composed_key_when_right_alt_is_pressed = false
+else
+	config.window_decorations = "NONE"
+end
 
 -- keybinds with leader key
 config.leader = { key = "a", mods = "CTRL" }
