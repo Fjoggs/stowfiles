@@ -6,19 +6,20 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				svelte = { "prettier" },
+				csharp = { "csharpier" },
 				css = { "prettier" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
-				lua = { "stylua" },
-				python = { "black" },
 				go = { "gofumpt", "goimports-reviser", "golines" },
+				html = { "prettier" },
+				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
+				json = { "prettier" },
+				lua = { "stylua" },
+				markdown = { "prettier" },
+				python = { "black" },
+				svelte = { "prettier" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				yaml = { "prettier" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -28,4 +29,3 @@ return {
 		})
 	end,
 }
-
